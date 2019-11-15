@@ -8,7 +8,8 @@ We found that currently, there are 33,118 employees who are eligible for retirem
 To query this I created the following data base diagram using quickDBD.
 ![alt test](Pictures/EmployeeDB.png)
 ##Query Codes
-### List of Retirees with Title and Salary
+### Code
+#### List of Retirees with Title and Salary
 ```SQL
 SELECT ce.emp_no, ce.first_name, ce.last_name, t.title, t.from_date, s.salary
 INTO retirees_titles
@@ -19,9 +20,9 @@ RIGHT JOIN current_emp AS ce
 ON (ce.emp_no = s.emp_no)
 ORDER BY emp_no;
 ```
-#### Output
+##### Output
 ![retirees](Pictures/retirees_titles.png)
-### Unique List of Retirees with Title and Salary
+#### Unique List of Retirees with Title and Salary
 ```SQL
 SELECT emp_no, first_name, last_name, title, from_date, salary
 INTO retirees_titles_unique
@@ -30,9 +31,9 @@ FROM (SELECT emp_no, first_name, last_name, title,
 	 FROM retirees_titles) AS rt
 	 WHERE rn = 1;
 ```
-#### Output
+##### Output
 ![retirees unique](Pictures/retirees_titles_unique.png)
-### List of mentors from 1965
+#### List of mentors from 1965
 ```SQL
 SELECT e.emp_no, e.first_name, e.last_name, t.title, de.from_date, de.to_date
 INTO mentors_list
@@ -45,9 +46,9 @@ WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
 AND (de.to_date = '9999-01-01')
 ORDER BY emp_no;
 ```
-#### Output
+##### Output
 ![mentors](Pictures/mentors_list.png)
-### List of unique mentors from 1965
+#### List of unique mentors from 1965
 ```SQL
 SELECT emp_no, first_name, last_name, title, from_date, to_date
 INTO mentors_list_unique
@@ -56,5 +57,5 @@ FROM (SELECT emp_no, first_name, last_name, title,
 	 FROM mentors_list) AS ml
 	 WHERE rn = 1;
 ```
-#### Output
+##### Output
 ![mentors unique](Pictures/mentors_list_unique.png)
