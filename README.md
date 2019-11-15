@@ -3,7 +3,7 @@ module 7 challenge
 ## Goal
 The goal of this project was to query various employee information databases to find some information on the employees at PH who are eligible for retirement and generate a list of potential mentors who are eligible for younger or new employees.
 ## Findings
-We found that currently, there are 33,118 employees who are eligible for retirement out of 240,120 total employees. Out of these we identified 1549 current employees born around 1965 who could potentially be mentors for younger employees.
+We found that currently, there are 33,118 employees who are eligible for retirement out of 240,120 total current employees. Out of these we identified 1549 current employees born around 1965 who could potentially be mentors for younger employees. Further analysis could be done by breaking down the current employees into age groups to see what percentages of the workforce they comprise. It would also be interesting to find the average length of time that an employee stays at PH to determine average turnover. 
 ## Database Visualisation
 To query this I created the following data base diagram using quickDBD.
 ![alt test](Pictures/EmployeeDB.png)
