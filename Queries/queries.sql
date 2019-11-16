@@ -38,6 +38,7 @@ FROM retirement_info AS ri
 INNER JOIN dept_emp AS de
 ON ri.emp_no = de.emp_no;
 
+-- Creating list of current emp for retirement
 SELECT ri.emp_no,
 	ri.first_name,
 	ri.last_name,
@@ -63,14 +64,6 @@ SELECT * FROM salaries
 ORDER BY to_date DESC;
 
 -- Create new table for retiring employees with gender
-SELECT emp_no, first_name, last_name, gender
-INTO emp_info
-FROM employees
-WHERE (birth_date BETWEEN '1952-01-01' AND '1955-12-31')
-AND (hire_date BETWEEN '1985-01-01' AND '1988-12-31');
-
-DROP TABLE emp_info 
-
 SELECT e.emp_no, e.first_name,
 	e.last_name, e.gender, s.salary,
 	de.to_date
@@ -99,6 +92,7 @@ FROM dept_manager AS dm
     INNER JOIN current_emp AS ce
         ON (dm.emp_no = ce.emp_no);
 
+--current employees retiring by department
 SELECT ce.emp_no,
 ce.first_name,
 ce.last_name,

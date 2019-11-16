@@ -5,7 +5,7 @@ dept_name varchar
 
 Employees
 -
-emp_no varchar pk
+emp_no int pk
 birth_date date
 first_name varchar
 last_name varchar
